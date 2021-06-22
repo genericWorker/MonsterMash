@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <title>Grade Converter</title>
+</head>
+<body>
+    <main>
+        <h1>Show letter grade</h1>
+        <script>
+			let numberGrade = 0;
+			let letterGrade = "";
+			
+			do {
+				// get number grade from user and convert to int
+				numberGrade = prompt("Enter number grade from 0 through 100\n" +
+							"Or enter 999 to end entries", 999);
+				numberGrade = parseInt(numberGrade);
+			
+				// convert to letter grade
+				if (numberGrade < 60) { 
+					letterGrade = "F"; 
+				} else if (numberGrade <= 67) { 
+					letterGrade = "D"; 
+				} else if (numberGrade <= 79) { 
+					letterGrade = "C"; 
+				} else if (numberGrade <= 87) { 
+					letterGrade = "B"; 
+				} else if (numberGrade <= 100){ 
+					letterGrade = "A"; 
+				}
+					
+				// if number grade is in proper range, notify user of letter grade
+				// otherwise, don't do anything
+				if (numberGrade >= 0 && numberGrade <= 100) {
+					const html = `<p>Grade ${numberGrade} = ${letterGrade}</p>`;
+            		document.write(html);
+					//alert("Number grade = " + numberGrade + "\n"
+					//	+ "Letter grade = " + letterGrade);
+				}
+			}
+			while (numberGrade != 999);
+        </script>
+    </main>
+</body>
+</html>

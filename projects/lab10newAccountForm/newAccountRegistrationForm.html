@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery New Account Creation Form</title>
+
+</head>
+<body>
+<h1>jQuery New Account Creation Form</h1>
+<form id="new-account-form">
+<p><input type="email" size="30" name="email" value="" placeholder="Enter your email address"></p>
+<p><input type="password" size="30" name="password1" value="" placeholder="Enter a password"></p>
+<p><input type="password" size="30" name="password2" value="" placeholder="Reenter the password"></p>
+<button type="submit">Create Account</button>
+</form>
+<section id='results'>
+</section>
+<!--<p>Form Output: <span id="output"></span></p>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+ let em = "";
+
+ function isValidEmail() {
+    em = $.trim($("input[name='email']").val());
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (emailPattern.test(em)) {
+        return true;
+    }
+    else {
+        alert ('Please enter valid email'); 
+        return false; 
+    }
+ }
+  function clearResults() {
+     $('section').empty();
+  }
+
+   $(document).on("submit",function(e) {
+        e.preventDefault();
+        clearResults();
+       $('section').append("<p>Form output:<\p>");
+       if (isValidEmail() ) {
+           var emvalue = '<p>' + em + '</p>';
+           $('section').append( emvalue);
+           var password1 = $("input[name='password1']").val();
+           var password2 = $("input[name='password2']").val();
+           if (password1 === password2) {
+               $('section').append('<p>Passwords match</p></span>');
+           } else {
+               $('section').append('<p>Passwords do not match</p>');
+           }
+       }
+   }); 
+      
+</script>
+</body>
+</html>

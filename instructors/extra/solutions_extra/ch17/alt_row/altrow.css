@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0 auto;
+    width: 650px;
+    border: 3px solid blue;
+    padding: 0 2em 1em;
+}
+h1 {
+    color: blue;
+}
+label {
+    float: left;
+    width: 11em;
+    text-align: right;
+    padding-bottom: .5em;
+}
+input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+
+/* table-specific css */
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+th {
+    padding: 0.5em;
+    text-align: left;
+    vertical-align: top;
+}
+td {
+    padding: 0.5em;
+    max-width: 28em;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    vertical-align: top;
+}
+.header {
+    background-color: lightblue;
+}
+.odd {
+    background-color: white;
+} 
+.even {
+    background-color: lightgray;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Future Value Application</title>
+    <script>
+		var futureValue;
+		
+		// get user entries
+		var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+		investment = parseFloat(investment);
+		var rate = prompt("Enter interest rate as xx.x", 7.5);
+		rate = parseFloat(rate);
+		var years = prompt("Enter number of years", 10);
+		years = parseInt(years);
+		
+		// calulate future value with yearly interest
+		futureValue = investment;
+		for (var i = 1; i <= years; i++ ) {
+			futureValue = futureValue + (futureValue * rate / 100);
+		}
+		futureValue = parseInt(futureValue);
+		
+		// calulate future value with monthly interest
+		var months = years*12;
+		var futureValueMonthly = investment;
+		for (var i = 1; i <= months; i++ ) {
+			futureValueMonthly = futureValueMonthly + (futureValueMonthly * rate / 12 / 100);
+		}
+		futureValueMonthly = parseInt(futureValueMonthly);
+    </script>
+</head>
+<body>
+    <main>
+    	<script>
+			document.write("Future Value with Yearly Interest<br>");
+			document.write("Investment amount = " + investment);
+			document.write(" Interest rate = " + rate);
+			document.write(" Years = " + years);
+			document.write(" Future Value is " + futureValue + "<br><br>");
+			
+			document.write("Future Value with Monthly Interest<br>");
+			document.write("Investment amount = " + investment);
+			document.write(" Interest rate = " + rate);
+			document.write(" Years = " + years);
+			document.write(" Future Value is " + futureValueMonthly + "<br><br>");
+        </script>
+        Thanks for using the Future Value application.
+    </main>
+</body>
+</html>

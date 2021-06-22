@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <title>Sum of Numbers</title>
+</head>
+<body>
+    <main>
+        <h1>Sum of Numbers</h1>
+        <script>
+			let topNumber = 0;
+			let again = "";
+			do {
+				do {
+					topNumber = prompt("Enter any top number to sum\nfrom 1 through 100", "5");
+					topNumber = parseInt(topNumber);
+					if (isNaN(topNumber) || topNumber < 1 || topNumber > 100) {
+						alert("Please enter a number between 1 and 100");
+					}
+				}
+				while (isNaN(topNumber) || topNumber < 1 || topNumber > 100);
+				
+				let sum = 0;
+				for (let i = 1; i <= topNumber; i++) {
+					sum = sum + i;
+				} 
+				const html = `<p>The sum of the numbers from 1 through ${topNumber} is ${sum}</p>`;
+				document.write(html);
+				//alert("The sum of the numbers from 1 through " + topNumber + " is " + sum);
+				
+				again = prompt("Do another sum?", "y");
+			}
+			while (again == "y");
+        </script>
+    </main>
+</body>
+</html>
