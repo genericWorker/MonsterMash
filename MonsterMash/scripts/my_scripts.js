@@ -1,13 +1,11 @@
-          const audio = new Audio('thunder.mp3');
-          
-          $(function() {
+        
+
+        $(function() {
               let headclix = 0,
                   eyeclix = 0,
                   noseclix = 0,
                   mouthclix = 0;
-        
-              audio.playbackRate = 2;
-              audio.play();
+              
               lightning_one();
               lightning_two();
               lightning_three();
@@ -60,6 +58,7 @@
                       $(this).animate({ left: "0px" }, 500);
                       headclix = 0;
                   }
+                  playThunder(); 
               });
 
               $("#eyes").on('click', function() {
@@ -106,5 +105,16 @@
           function lightning_three() {
               $("#lightning3").fadeIn(250).fadeOut(250);
               setTimeout("lightning_three()", 7000);
-              audio.play(); 
+              playThunder(); 
+            
+          }
+
+
+          function playThunder() {
+            console.log("PlayThunder in"); 
+            $('#thunder').get(0).playbackRate = 2;
+            $('#thunder').get(0).muted = false; 
+            $('#thunder').get(0).play();
+            console.log("PlayThunder out."); 
+          
           }
